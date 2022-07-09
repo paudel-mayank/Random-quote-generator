@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './app.css'
+
+import React,{useState, useEffect} from "react";
+
 
 function App() {
+
+  const [quote,setQuote] =useState('');
+  let [ author,setAuthor]=useState('')
+
+
+  useEffect(()=>{
+    fetch("http://api.quotable.io/random")
+    .then ((response)=> response.json())
+    .then(quote=> {
+      setQuote(quote.content)
+    setAuthor(quote.author)})
+    },[])
+
+  const nextQuote=()=>{
+    fetch("http://api.quotable.io/random")
+         .then ((response)=> response.json())
+         .then(quote=> {
+        setQuote(quote.content)
+        setAuthor(quote.author)})
+  }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  <main>
+    <section className="container">
+      <div className="content">
+      <p id="title"> Quote of the Day</p>
+      <p className="quote"> 
+        {quote}   </p>
+        <p className="author"> --{author}</p>
+        <button onClick={nextQuote}>Next</button>
+        </div>
+    </section>
+
+  </main>
+  
+
   );
 }
 

@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    outline:none;
+
+}
+html{
+    font-size: 62.5%;
+}
+
+main{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: pink;
+    width:330px;
+    padding:20px
+}
+#title{
+    text-align: center;
+    font-size: 2rem;
+    color:white;
+}
+span{
+    font-style:italic ;
+    font-size: 30px;
+}
+.author{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.quote{
+    font-size: 20px;
+}
+button{
+    padding:10px;
+    background-color: aquamarine;
+    color:rgb(241, 19, 19);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
