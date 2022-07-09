@@ -36,7 +36,9 @@ function App() {
       <p className="quote"> 
         {quote}   </p>
         <p className="author"> --{author}</p>
-        <button onClick={nextQuote}>Next</button>
+        <div className="button">
+           <button onClick={nextQuote}>Next</button>
+        </div>
         </div>
     </section>
 
